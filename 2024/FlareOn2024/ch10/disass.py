@@ -137,6 +137,8 @@ def vm_disassemble(vm_ops):
             break
 
 if __name__ == "__main__":
+    #c4tb_file_info = read_c4tb("disk/catmeme1.jpg.c4tb")
+    #c4tb_file_info = read_c4tb("disk/catmeme2.jpg.c4tb")
     c4tb_file_info = read_c4tb("disk/catmeme3.jpg.c4tb")
     print_c4tb_info(c4tb_file_info)
     c4tb_file_info = add_key_to_file_info(c4tb_file_info)
