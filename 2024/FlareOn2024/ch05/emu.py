@@ -23,4 +23,4 @@ mu.mem_write(encrypted, b'\xA9\xF6\x34\x08\x42\x2A\x9E\x1C\x0C\x03\xA8\x08\x94\x
 
 mu.emu_start(0xe7f, 0xecf)
 
-print(mu.mem_read(encrypted, 0x80))
+print(mu.mem_read(encrypted, 256))
