@@ -13,7 +13,7 @@ def ROR32(value, n):
 def VM1():
     mem = [0 for x in range(0,33)]
 
-    mem[0] = 0x6144
+    mem[0] = 0x6144   #DaCubicleLife101
     mem[1] = 0x7543
     mem[2] = 0x6962
     mem[3] = 0x6c63
@@ -86,7 +86,7 @@ def VM1():
 def VM2():
     mem = [0 for x in range(0,256)]
 
-    mem[0] = 0x3347
+    mem[0] = 0x3347   #G3tDaJ0bD0neM4te
     mem[1] = 0x4474
     mem[2] = 0x4a61
     mem[3] = 0x6230
@@ -230,8 +230,8 @@ def VM3():
         mem[0x17] = mem[0x17] & mem[0x1e]
         mem[0x18] = (0xf91 << 0x10) | 0x374
         if mem[0x18] == mem[0x17]:
-            mem[0x1f] += 1
-
+            mem[0x1f] += 1   
+   # first 8 solve with Z3 = "VerYDumB"
     if mem[0x1f] > 2:
         mem[0xa] = 0x193
         mem[0xb] = 0x100
@@ -258,7 +258,7 @@ def VM3():
         mem[0x1a] = (0x31f0 << 0x10) | 0x9d2
         if mem[0x1a] == mem[0x19]:
             mem[0x1f] += 1
-
+   # Guessing last 8 bytes = password, tried: (PasSWorD, PASSWORD, password). password is the last 8 bytes
     if mem[0x1f] == 4:
         mem[0x20] = 1
 
