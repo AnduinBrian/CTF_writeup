@@ -90,7 +90,7 @@ $python hitag2_parse.py 0000fdffb8d5fc63a4e9b9d12a
 ```
 
 So I tried using Manchester II. The first few packets had incorrect checksums, but the 4th one was valid, and I was able to parse it.
-```console
+```c
 $python hitag2_parse.py ffff0200472a039c5b16462ed5
 [+] Packet bytes:
 | FF | FF | 02 | 00 | 47 | 2A | 03 | 9C | 5B | 16 | 46 | 2E | D5 |
