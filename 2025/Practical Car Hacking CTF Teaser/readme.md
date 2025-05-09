@@ -42,7 +42,7 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 ><br>
 
 This chall is quite easy. From the PDF, we can tell that  CRC8 H2F use poly 0x2f, init value is 0xff. Base on 15 messages above, we can write a script to bruteforce the secret that will be used everytime.
-```console
+```python
 Found secret: 195
 FLAG: CTF{35}
 ```
@@ -84,7 +84,7 @@ Packet detail:
 | CHK| 8 | Checksum bytes|
 
 Since Hitag2 uses Manchester encoding, we need to use Manchester (I or II) decoding. First, I tried Manchester I and wrote a parser for it. However, I didn't get any valid output because the checksum was incorrect. The checksum is calculated as the XOR of all bytes, excluding the checksum byte itself though some PDFs mention excluding the sync bytes as well (but not this case).
-```console
+```python
 $python hitag2_parse.py 0000fdffb8d5fc63a4e9b9d12a
 [+] Packet bytes:
 | 00 | 00 | FD | FF | B8 | D5 | FC | 63 | A4 | E9 | B9 | D1 | 2A |
@@ -158,7 +158,7 @@ $python hitag2_parse.py ffff0200472a03a05749e7facf
 * \<nR2> = 0xe80
 * \<aR2> = 0xea2d8601
 
-```console
+```python
 $./ht2crack5 0200472a e70 e93a6e74 e80 ea2d8601
 Thread 0 slice 1/170
 Thread 5 slice 1/170
@@ -177,7 +177,7 @@ Key: 72B7C3CCE726
 ```
 
 We found key ?!! But let's verify it. I use a [script](https://github.com/factoritbv/hitag2hell/blob/master/pseudocode/hitag2.py) to verify if the key is correct we will get the same Keystream as first packet (the packet I mention at part 1).
-```console
+```python
 $python hitag2.py
 Usage: python hitag2.py <initial state> | <key> <uid> <nonce>
 
