@@ -10,14 +10,14 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 &nbsp;&nbsp;&nbsp;&nbsp;VW uses the Autosar CRC8 8H2F checksum. Before computing the CRC, the payload is extended by a "secret" byte based on the Arbitration ID. Part of this challenge is figuring out what this "secret" byte is based on some traffic logged from the car. For some messages the "secret" value depends on the value of the counter, but that is not the case for this message.
 >
 >Example code to generate the CRC:
-><code> import crcmod
+>```import crcmod
 >crc = crcmod.mkCrcFun(
 >poly=0x100 + polynomial,
 >initCrc=initial_value
 >rev=False,
 >)
 >data = payload + secret_byte
->checksum = crc(data) ^ 0xff</code>
+>checksum = crc(data) ^ 0xff```
 >
 >**Logged Messages**
 >&nbsp;&nbsp;&nbsp;&nbsp;The following 15 messages were captured from the car. Note the first byte is the checksum of the message, then second byte contains a counter.
