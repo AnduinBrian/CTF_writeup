@@ -44,8 +44,8 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 This chall is quite easy. From the PDF, we can tell that  CRC8 H2F use poly 0x2f, init value is 0xff. Base on 15 messages above, we can write a [script](script/solve_checksum.py) to bruteforce the secret that will be used everytime.
 ```python
 $python solve_checksum.py
-Found secret: 195
-FLAG: CTF{35}
+[+] Found secret: 195
+[+] FLAG: CTF{35}
 ```
 
 ## Medium Task
