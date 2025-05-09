@@ -1,4 +1,3 @@
-import struct
 import sys
 
 def check_sum(bytes_arr):
@@ -26,8 +25,7 @@ if __name__ == "__main__":
             sync = int.from_bytes(packet_hex[:2], byteorder='big')
             print("  [-] SYNC: 0x%x" % sync)
             
-            keyfob_id = packet_hex[2:6]
-            keyfob_id = struct.unpack(">I", keyfob_id)[0]
+            keyfob_id = keyfob_id = int.from_bytes(packet_hex[2:6], byteorder='big')
             print("  [-] UID: 0x%x" % keyfob_id)
 
             button = packet_hex[6] >> 4 & 0xf
