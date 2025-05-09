@@ -38,7 +38,7 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 >&nbsp;&nbsp;&nbsp;&nbsp;*14&nbsp;&nbsp;800e0300*<br>
 >
 >**References** <br>
->Autosar CRC specification: https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_CRCLibrary.pdf
+>&nbsp;&nbsp;&nbsp;&nbsp;Autosar CRC specification: https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_CRCLibrary.pdf
 ><br>
 
 This chall is quite easy. From the PDF, we can tell that  CRC8 H2F use poly 0x2f, init value is 0xff. Base on 15 messages above, we can write a script to bruteforce the secret that will be used everytime.
