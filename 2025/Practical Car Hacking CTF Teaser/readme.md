@@ -96,7 +96,7 @@ $python hitag2_parse.py 0000fdffb8d5fc63a4e9b9d12a
 [?] Wrong checksum: should be 2A - but got D5
 ```
 
-So I tried using Manchester II. The first few packets had incorrect checksums, but the 4th one was valid, and I was able to parse it.
+So I tried using Manchester II. The first few packets had incorrect checksums, but the 4th was valid, and I was able to parse it.
 <br>One more thing, the default value of Error tolerance is 2. But some packets dont have a "*good*" SYNC, so I try to increase it by one and decode again. This time with Error tolerance = 3, all the packet has 0xffff SYNC
 
 ![](pic/error.png)
