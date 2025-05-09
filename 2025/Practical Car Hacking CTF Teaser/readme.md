@@ -86,7 +86,7 @@ Packet detail:
 | KS | 32 | Keystream|
 | CHK| 8 | Checksum bytes|
 
-Since Hitag2 uses Manchester encoding, we need to use Manchester (I or II) decoding. First, I tried Manchester I and wrote a parser for it. However, I didn't get any valid output because the checksum was incorrect. The checksum is calculated as the XOR of all bytes, excluding the checksum byte itself though some PDFs mention excluding the sync bytes as well (but not this case).
+Since Hitag2 uses Manchester encoding, we need to use Manchester (I or II) decoding. First, I tried Manchester I and wrote a parser for it. However, I didn't get any valid output because the checksum was incorrect. The checksum is calculated as the XOR of all bytes, excluding the checksum byte itself and 2-bytes SYNC.
 
 ```python
 $python hitag2_parse.py 0000fdffb8d5fc63a4e9b9d12a
