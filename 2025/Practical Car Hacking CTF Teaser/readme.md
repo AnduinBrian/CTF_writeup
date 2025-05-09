@@ -54,9 +54,9 @@ FLAG: CTF{35}
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Use URH to decode the messages from the keyfob and figure out the keyfob ID. The flag is of the form CTF{keyfob id}, e.g CTF{536c8dab}
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Refer to the following papers for more information on Hitag2 and the possible message structure.
 ><br>**References**
->&nbsp;&nbsp;&nbsp;&nbsp;URH download: https://github.com/jopohl/urh/releases
->&nbsp;&nbsp;&nbsp;&nbsp;Introduction to hitag2: https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final95.pdf
->&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 as used in RKE, reference for message layout: https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf
+><br>&nbsp;&nbsp;&nbsp;&nbsp;URH download: https://github.com/jopohl/urh/releases
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Introduction to hitag2: https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final95.pdf
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 as used in RKE, reference for message layout: https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf
 ><br>
 
 First, we need to setup URH. I use *Autodetect parameters* with 2 option:
