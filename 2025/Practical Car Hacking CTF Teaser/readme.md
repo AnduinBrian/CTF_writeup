@@ -63,8 +63,8 @@ First, we need to setup URH. I use *Autodetect parameters* with 2 option:
 * Additionally detect noise
 * Additionally detect modulation
 
-But when examining the sample, I see the Samples/Symbol is 159. So we need to tweak the settings. 
-(pic)
+But when examining the sample, I see the Samples/Symbol is 159. So we need to tweak the settings. <br>
+![](pic/URH.PNG "Tux")
 From the PDF, we can see:
 | Parameter      | Value |
 | :---        |    :----:   |
