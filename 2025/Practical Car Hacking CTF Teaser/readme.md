@@ -154,8 +154,8 @@ $python hitag2_parse.py ffff0200472a03a05749e7facf
   [-] IV: 0x00000e80
   [-] secret: 0xea2d8601
 ```
-* \<nR2> = 00000e80
-* \<aR2> = ea2d8601
+* \<nR2> = 0xe80
+* \<aR2> = 0xea2d8601
 
 ```console
 $./ht2crack5 0200472a 00000e70 e93a6e74 00000e80 ea2d8601
