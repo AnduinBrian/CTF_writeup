@@ -93,7 +93,7 @@ $python hitag2_parse.py 0000fdffb8d5fc63a4e9b9d12a
 ```
 
 So I tried using Manchester II. The first few packets had incorrect checksums, but the 4th one was valid, and I was able to parse it.
-```console
+```python
 $python hitag2_parse.py ffff0200472a039c5b16462ed5
 [+] Packet bytes:
 | FF | FF | 02 | 00 | 47 | 2A | 03 | 9C | 5B | 16 | 46 | 2E | D5 |
@@ -138,7 +138,7 @@ I used all the data from the first packet that was successfully parsed. There ar
 With the hint, we can easy find the hitag2crack in proxmark3 git repo. There are crack1, 2, 3, 4 and 5. The author of first 4 is Kevin Sheldrake - he gave an excellent talk about cracking hitag2 crypto at 44CON (should watch !!). But from the hint, I went straight to crack5.
 
 We have \<UID> \<nR1> \<aR1>, now need another \<nR2> \<aR2>. I tried the next successful parsed packet, I compiled the crack5 and passed the param in.
-```console
+```python
 $python hitag2_parse.py ffff0200472a03a05749e7facf
 [+] Packet bytes:
 | FF | FF | 02 | 00 | 47 | 2A | 03 | A0 | 57 | 49 | E7 | FA | CF |
