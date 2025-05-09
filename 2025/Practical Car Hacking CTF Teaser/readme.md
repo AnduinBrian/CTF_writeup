@@ -17,9 +17,9 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 >rev=False,
 >)
 >data = payload + secret_byte
->checksum = crc(data) ^ 0xff ```
->
->**Logged Messages**
+>checksum = crc(data) ^ 0xff
+>```
+>**Logged Messages** <br>
 >&nbsp;&nbsp;&nbsp;&nbsp;The following 15 messages were captured from the car. Note the first byte is the checksum of the message, then second byte contains a counter.
 >&nbsp;&nbsp;&nbsp;&nbsp;*0&nbsp;&nbsp;&nbsp;74000300*
 >&nbsp;&nbsp;&nbsp;&nbsp;*1&nbsp;&nbsp;&nbsp;1010300*
