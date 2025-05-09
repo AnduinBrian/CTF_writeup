@@ -110,22 +110,22 @@ The flag is CTF{keyfobid}, so flag for part 1 is `CTF{200472a}`
 ## Hard Task
 #### hittag2 Keyfob ID (part 2)
 >**Challenge**
->&nbsp;&nbsp;&nbsp;&nbsp;This challenge contains a recording from a Keyfob featuring a Hitag2 cipher for RKE. The keyfob transmits a message containing a plaintext keyfob ID, counter and button followed by a MAC. Attached to this challenge you will find a SDR recording of 6 presses of the unlock button.
->&nbsp;&nbsp;&nbsp;&nbsp;Use URH to decode the messages from the keyfob and figure out the keyfob ID, button and keystream. Use this to crack the (equivalent) key that's inside the keyfob. The flag is of the form CTF{key}, e.g. CTF{1d81e7e1a6fe}.
+><br>&nbsp;&nbsp;&nbsp;&nbsp;This challenge contains a recording from a Keyfob featuring a Hitag2 cipher for RKE. The keyfob transmits a message containing a plaintext keyfob ID, counter and button followed by a MAC. Attached to this challenge you will find a SDR recording of 6 presses of the unlock button.
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Use URH to decode the messages from the keyfob and figure out the keyfob ID, button and keystream. Use this to crack the (equivalent) key that's inside the keyfob. The flag is of the form CTF{key}, e.g. CTF{1d81e7e1a6fe}.
 >
->**References**
->&nbsp;&nbsp;&nbsp;&nbsp;Introduction to hitag2: https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final95.pdf
->&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 as used in RKE, reference for message layout: https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf
->&nbsp;&nbsp;&nbsp;&nbsp;Reference for cracking code, introduces "equivalent key": https://www.usenix.org/system/files/conference/woot18/woot18-paper-verstegen.pdf
->&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 cracking code from proxmark3 . Use crack5 for CPU cracking, or crack5opencl for OpenCL based cracking: https://github.com/RfidResearchGroup/proxmark3/tree/master/tools/hitag2crack
+><br>**References**
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Introduction to hitag2: https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final95.pdf
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 as used in RKE, reference for message layout: https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Reference for cracking code, introduces "equivalent key": https://www.usenix.org/system/files/conference/woot18/woot18-paper-verstegen.pdf
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 cracking code from proxmark3 . Use crack5 for CPU cracking, or crack5opencl for OpenCL based cracking: https://github.com/RfidResearchGroup/proxmark3/tree/master/tools/hitag2crack
 >
->**Hints**
->&nbsp;&nbsp;&nbsp;&nbsp;The cracking code expects the UID and two pairs of IV and Keystream
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. \<UID> \<nR1> \<aR1> \<nR2> \<aR2>
->&nbsp;&nbsp;&nbsp;&nbsp;nR is called IV in the papers, and is formed by concatenating CNTRH (assume 0, 18 bits), CNTRL (from received message, 10 bits) and BTN (from received message, 4 bits). CNTRH is on the MSB side, BTN on the LSB side.
->&nbsp;&nbsp;&nbsp;&nbsp;aR is the keystream. The cracking code expects the keystream to be inverted (^ 0xffffffff), see the test script for reference https://github.com/RfidResearchGroup/proxmark3/blob/master/tools/hitag2crack/hitag2_gen_nRaR.py#L134.
->&nbsp;&nbsp;&nbsp;&nbsp;If you have issues try using the python implementation from hitag2hell or proxmark to generate some examples to test the cracking.
->&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 implementation in Python to verify results: https://github.com/factoritbv/hitag2hell/blob/master/pseudocode/hitag2.py
+><br>**Hints**
+><br>&nbsp;&nbsp;&nbsp;&nbsp;The cracking code expects the UID and two pairs of IV and Keystream
+><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. \<UID> \<nR1> \<aR1> \<nR2> \<aR2>
+><br>&nbsp;&nbsp;&nbsp;&nbsp;nR is called IV in the papers, and is formed by concatenating CNTRH (assume 0, 18 bits), CNTRL (from received message, 10 bits) and BTN (from received message, 4 bits). CNTRH is on the MSB side, BTN on the LSB side.
+><br>&nbsp;&nbsp;&nbsp;&nbsp;aR is the keystream. The cracking code expects the keystream to be inverted (^ 0xffffffff), see the test script for reference https://github.com/RfidResearchGroup/proxmark3/blob/master/tools/hitag2crack/hitag2_gen_nRaR.py#L134.
+><br>&nbsp;&nbsp;&nbsp;&nbsp;If you have issues try using the python implementation from hitag2hell or proxmark to generate some examples to test the cracking.
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 implementation in Python to verify results: https://github.com/factoritbv/hitag2hell/blob/master/pseudocode/hitag2.py
 ><br>
 
 I used all the data from the first packet that was successfully parsed. There are a few things we need to note:
