@@ -12,9 +12,9 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 >Example code to generate the CRC:
 >```import crcmod
 >crc = crcmod.mkCrcFun(
->poly=0x100 + polynomial,
->initCrc=initial_value
->rev=False,
+>    poly=0x100 + polynomial,
+>    initCrc=initial_value
+>    rev=False,
 >)
 >data = payload + secret_byte
 >checksum = crc(data) ^ 0xff
