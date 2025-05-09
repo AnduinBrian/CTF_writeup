@@ -97,7 +97,7 @@ $python hitag2_parse.py 0000fdffb8d5fc63a4e9b9d12a
 ```
 
 So I tried using Manchester II. The first few packets had incorrect checksums, but the 4th was valid, and I was able to parse it.
-<br>One more thing, the default value of Error tolerance is 2. But some packets dont have a "*good*" SYNC, so I try to increase it by one and decode again. This time with Error tolerance = 3, all the packet has 0xffff SYNC
+<br>One more thing, the default value of Error tolerance is 2. But some packets dont have a "*good*" SYNC, so I try to increase it by one and decode again. This time with Error tolerance = 3, all the packet has 0xffff SYNC.
 
 ![](pic/error.png)
 
@@ -138,10 +138,10 @@ The flag is CTF{keyfobid}, so flag for part 1 is `CTF{200472a}`
 ><br>
 
 I used all the data from the first packet that was successfully parsed. There are a few things we need to note:
-* The IV (nonce) is based on the Counter (CNTR). The full CNTR is 28 bits, but only the 10 low bits (CNTRL) are sent over\-the\-air. The 18 bits remain are unknown (I assume they are all zeros). The IV is Counter || Button ('||' denotes concatenation) <=> 0xe7 || 0x0 = 0xe70
-* Cracking code expects the keystream to be inverted => keystream ^ (0xffffffff) <=> 0x16c5918b ^ 0xffffffff = 0xe93a6e74
-* \<nR1> = 0xe70
-* \<aR1> = 0xe93a6e74
+* The IV (nonce) is based on the Counter (CNTR). The full CNTR is 28 bits, but only the 10 low bits (CNTRL) are sent over\-the\-air. The 18 bits remain are unknown (I assume they are all zeros). The IV is Counter || Button ('||' denotes concatenation) <=> 0xe7 || 0x0 = 0xe70.
+* Cracking code expects the keystream to be inverted => keystream ^ (0xffffffff) <=> 0x16c5918b ^ 0xffffffff = 0xe93a6e74.
+* \<nR1> = 0xe70.
+* \<aR1> = 0xe93a6e74.
 
 With the hint, we can easily find the hitag2crack in proxmark3 git repo. There are crack1, 2, 3, 4 and 5. The author of first 4 is Kevin Sheldrake - he gave an excellent talk about cracking hitag2 crypto at 44CON 2017 ([should watch !!](https://youtu.be/abx1hQDCKyg?si=jOf9Ig_jUpA0jmmm)). But from the hint, I went straight to crack5.
 <br>We have \<UID> \<nR1> \<aR1>, now need another \<nR2> \<aR2>. I tried the next successful parsed packet, I compiled the crack5 and passed the param in.
