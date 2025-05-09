@@ -87,9 +87,6 @@ Packet detail:
 | CHK| 8 | Checksum bytes|
 
 Since Hitag2 uses Manchester encoding, we need to use Manchester (I or II) decoding. First, I tried Manchester I and wrote a parser for it. However, I didn't get any valid output because the checksum was incorrect. The checksum is calculated as the XOR of all bytes, excluding the checksum byte itself though some PDFs mention excluding the sync bytes as well (but not this case).
-<br>One more thing, the default value of Error tolerance is 2. But some packet dont have a "good" SYNC, so I try to increase it by one and decode again. This time with Error tolerance = 3, all the packet has 0xffff SYNC
-
-![](pic/error.png)
 
 ```python
 $python hitag2_parse.py 0000fdffb8d5fc63a4e9b9d12a
@@ -100,6 +97,11 @@ $python hitag2_parse.py 0000fdffb8d5fc63a4e9b9d12a
 ```
 
 So I tried using Manchester II. The first few packets had incorrect checksums, but the 4th one was valid, and I was able to parse it.
+
+One more thing, the default value of Error tolerance is 2. But some packet dont have a "good" SYNC, so I try to increase it by one and decode again. This time with Error tolerance = 3, all the packet has 0xffff SYNC
+
+![](pic/error.png)
+
 ```python
 $python hitag2_parse.py ffff0200472a039c5b16462ed5
 [+] Packet bytes:
