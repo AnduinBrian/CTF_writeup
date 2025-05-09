@@ -3,7 +3,7 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 
 ## Easy Task
 #### Volkswagen CAN Checksum
-><br>**Challenge**
+>**Challenge**
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;The goal of this challenge is to compute the correct one byte checksum XX for the CAN message with payload XX0f0300. The flag is of the format CTF{XX}.
 ><br>
 ><br>**Background**
@@ -47,8 +47,8 @@ FLAG: CTF{35}
 
 ## Medium Task
 #### hittag2 Keyfob ID (part 1)
->**Challenge**<br>
->&nbsp;&nbsp;&nbsp;&nbsp;This challenge contains a recording from a Keyfob featuring a Hitag2 cipher for RKE. The keyfob transmits a message containing a plaintext keyfob ID, counter and button followed by a MAC. Attached to this challenge you will find a SDR recording of 6 presses of the unlock button.
+>**Challenge**
+><br>&nbsp;&nbsp;&nbsp;&nbsp;This challenge contains a recording from a Keyfob featuring a Hitag2 cipher for RKE. The keyfob transmits a message containing a plaintext keyfob ID, counter and button followed by a MAC. Attached to this challenge you will find a SDR recording of 6 presses of the unlock button.
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Use URH to decode the messages from the keyfob and figure out the keyfob ID. The flag is of the form CTF{keyfob id}, e.g CTF{536c8dab}
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Refer to the following papers for more information on Hitag2 and the possible message structure.
 ><br>**References**
