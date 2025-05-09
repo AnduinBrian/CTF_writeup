@@ -20,7 +20,7 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 >checksum = crc(data) ^ 0xff
 >```
 >**Logged Messages** <br>
->&nbsp;&nbsp;&nbsp;&nbsp;The following 15 messages were captured from the car. Note the first byte is the checksum of the message, then second byte contains a counter.
+>&nbsp;&nbsp;&nbsp;&nbsp;The following 15 messages were captured from the car. Note the first byte is the checksum of the message, then second byte contains a counter. <br>
 >&nbsp;&nbsp;&nbsp;&nbsp;*0&nbsp;&nbsp;&nbsp;74000300*
 >&nbsp;&nbsp;&nbsp;&nbsp;*1&nbsp;&nbsp;&nbsp;1010300*
 >&nbsp;&nbsp;&nbsp;&nbsp;*2&nbsp;&nbsp;&nbsp;31020300*
@@ -37,7 +37,7 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 >&nbsp;&nbsp;&nbsp;&nbsp;*13&nbsp;&nbsp;700d0300*
 >&nbsp;&nbsp;&nbsp;&nbsp;*14&nbsp;&nbsp;800e0300*
 >
->**References**
+>**References** <br>
 >Autosar CRC specification: https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_CRCLibrary.pdf
 ><br>
 
