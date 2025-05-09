@@ -64,7 +64,7 @@ First, we need to setup URH. I use *Autodetect parameters* with 2 option:
 * Additionally detect modulation
 
 But when examining the sample, I see the Samples/Symbol is 159. So we need to tweak the settings. <br>
-![](pic/URH.PNG "Tux")
+![](pic/URH.PNG)
 From the PDF, we can see:
 | Parameter      | Value |
 | :---        |    :----:   |
