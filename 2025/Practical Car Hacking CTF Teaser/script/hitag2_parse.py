@@ -3,7 +3,7 @@ import sys
 
 def check_sum(bytes_arr):
     checksum = 0
-    for i in bytes_arr[:-1]:
+    for i in bytes_arr[2:-1]:
         checksum ^= i
     
     return checksum
