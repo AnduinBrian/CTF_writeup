@@ -149,7 +149,6 @@ $python hitag2_parse.py ffff0200472a03a05749e7facf
   [-] Counter: 0xe8
   [-] keystream: 0x15d279fe
   [-] Checksum bytes: 0xcf
-[!] Flag part 1: CTF{200472a}
 
 [+] Part 2
   [-] IV: 0x00000e80
