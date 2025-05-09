@@ -158,7 +158,7 @@ $python hitag2_parse.py ffff0200472a03a05749e7facf
 * \<aR2> = 0xea2d8601
 
 ```console
-$./ht2crack5 0200472a 00000e70 e93a6e74 00000e80 ea2d8601
+$./ht2crack5 0200472a e70 e93a6e74 e80 ea2d8601
 Thread 0 slice 1/170
 Thread 5 slice 1/170
 Thread 1 slice 1/170
