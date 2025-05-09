@@ -172,7 +172,7 @@ Thread 8 slice 23/170
 Key: 72B7C3CCE726
 ```
 
-We found key ?!! But let's verify it. I use a script to verify if the key is correct we will get the same Keystream (I used the packet I mention at part 1).
+We found key ?!! But let's verify it. I use a [script](https://github.com/factoritbv/hitag2hell/blob/master/pseudocode/hitag2.py) to verify if the key is correct we will get the same Keystream (I used the packet I mention at part 1).
 ```console
 $python hitag2.py
 Usage: python hitag2.py <initial state> | <key> <uid> <nonce>
