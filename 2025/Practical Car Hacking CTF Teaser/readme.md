@@ -138,7 +138,7 @@ The flag is CTF{keyfobid}, so flag for part 1 is `CTF{200472a}`
 ><br>
 
 I used all the data from the first packet that was successfully parsed. There are a few things we need to note:
-* The IV(nonce) is based on the Counter (CNTR). The full CNTR is 28 bits, but only the 10 low bits(CNTRL) are sent over\-the\-air. The 18 bits remain are unknown (I assume they are all zeros). The IV is Counter || Button ('||' denotes concatenation) <=> 0xe7 || 0x0 = 0xe70
+* The IV (nonce) is based on the Counter (CNTR). The full CNTR is 28 bits, but only the 10 low bits (CNTRL) are sent over\-the\-air. The 18 bits remain are unknown (I assume they are all zeros). The IV is Counter || Button ('||' denotes concatenation) <=> 0xe7 || 0x0 = 0xe70
 * Cracking code expects the keystream to be inverted => keystream ^ (0xffffffff) <=> 0x16c5918b ^ 0xffffffff = 0xe93a6e74
 * \<nR1> = 0xe70
 * \<aR1> = 0xe93a6e74
