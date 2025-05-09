@@ -20,23 +20,23 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 >```
 ><br>**Logged Messages**
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;The following 15 messages were captured from the car. Note the first byte is the checksum of the message, then second byte contains a counter.
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*0&nbsp;&nbsp;&nbsp;74000300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*1&nbsp;&nbsp;&nbsp;1010300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*2&nbsp;&nbsp;&nbsp;31020300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*3&nbsp;&nbsp;&nbsp;84030300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*4&nbsp;&nbsp;&nbsp;fe040300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*5&nbsp;&nbsp;&nbsp;4b050300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*6&nbsp;&nbsp;&nbsp;bb060300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*7&nbsp;&nbsp;&nbsp;0e070300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*8&nbsp;&nbsp;&nbsp;4f080300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*9&nbsp;&nbsp;&nbsp;fa090300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*10&nbsp;&nbsp;0a0a0300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*11&nbsp;&nbsp;bf0b0300*<br>
-><br>&nbsp;&nbsp;&nbsp;&nbsp;*12&nbsp;&nbsp;c50c0300*<br>
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*0&nbsp;&nbsp;&nbsp;74000300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*1&nbsp;&nbsp;&nbsp;c1010300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*2&nbsp;&nbsp;&nbsp;31020300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*3&nbsp;&nbsp;&nbsp;84030300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*4&nbsp;&nbsp;&nbsp;fe040300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*5&nbsp;&nbsp;&nbsp;4b050300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*6&nbsp;&nbsp;&nbsp;bb060300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*7&nbsp;&nbsp;&nbsp;0e070300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*8&nbsp;&nbsp;&nbsp;4f080300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*9&nbsp;&nbsp;&nbsp;fa090300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*10&nbsp;&nbsp;0a0a0300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*11&nbsp;&nbsp;bf0b0300*
+><br>&nbsp;&nbsp;&nbsp;&nbsp;*12&nbsp;&nbsp;c50c0300*
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;*13&nbsp;&nbsp;700d0300*
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;*14&nbsp;&nbsp;800e0300*
->**References** <br>
->&nbsp;&nbsp;&nbsp;&nbsp;Autosar CRC specification: https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_CRCLibrary.pdf
+><br>**References**
+><br>&nbsp;&nbsp;&nbsp;&nbsp;Autosar CRC specification: https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_CRCLibrary.pdf
 ><br>
 
 This chall is quite easy. From the PDF, we can tell that  CRC8 H2F use poly 0x2f, init value is 0xff. Base on 15 messages above, we can write a script to bruteforce the secret that will be used everytime.
