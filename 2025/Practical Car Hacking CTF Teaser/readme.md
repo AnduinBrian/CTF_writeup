@@ -87,7 +87,7 @@ Packet detail:
 | CHK| 8 | Checksum bytes|
 
 Since Hitag2 uses Manchester encoding, we need to use Manchester (I or II) decoding. First, I tried Manchester I and wrote a parser for it. However, I didn't get any valid output because the checksum was incorrect. The checksum is calculated as the XOR of all bytes, excluding the checksum byte itself though some PDFs mention excluding the sync bytes as well (but not this case).
-One more thing, the default value of Error tolerance is 2. But some packet dont have a "good" SYNC, so I try to increase it by one and decode again. This time with Error tolerance = 3, all the packet has 0xffff SYNC
+<br>One more thing, the default value of Error tolerance is 2. But some packet dont have a "good" SYNC, so I try to increase it by one and decode again. This time with Error tolerance = 3, all the packet has 0xffff SYNC
 
 ![](pic/error.png)
 
