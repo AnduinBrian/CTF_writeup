@@ -6,7 +6,7 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 >**Challenge**
 > <br>&nbsp;&nbsp;&nbsp;&nbsp;The goal of this challenge is to compute the correct one byte checksum XX for the CAN message with payload XX0f0300. The flag is of the format CTF{XX}.
 >
->**Background**
+>**Background**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;VW uses the Autosar CRC8 8H2F checksum. Before computing the CRC, the payload is extended by a "secret" byte based on the Arbitration ID. Part of this challenge is figuring out what this "secret" byte is based on some traffic logged from the car. For some messages the "secret" value depends on the value of the counter, but that is not the case for this message.
 >
 >Example code to generate the CRC:
