@@ -5,10 +5,8 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 #### Volkswagen CAN Checksum
 >**Challenge**
 > <br>&nbsp;&nbsp;&nbsp;&nbsp;The goal of this challenge is to compute the correct one byte checksum XX for the CAN message with payload XX0f0300. The flag is of the format CTF{XX}.
->
 >**Background**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;VW uses the Autosar CRC8 8H2F checksum. Before computing the CRC, the payload is extended by a "secret" byte based on the Arbitration ID. Part of this challenge is figuring out what this "secret" byte is based on some traffic logged from the car. For some messages the "secret" value depends on the value of the counter, but that is not the case for this message.
->
 >Example code to generate the CRC:
 >```import crcmod
 >crc = crcmod.mkCrcFun(
@@ -36,7 +34,6 @@ Pretty good CTF (for a noob like me)! I learned a lot from those challenges. Tha
 >&nbsp;&nbsp;&nbsp;&nbsp;*12&nbsp;&nbsp;c50c0300*<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;*13&nbsp;&nbsp;700d0300*<br>
 >&nbsp;&nbsp;&nbsp;&nbsp;*14&nbsp;&nbsp;800e0300*<br>
->
 >**References** <br>
 >&nbsp;&nbsp;&nbsp;&nbsp;Autosar CRC specification: https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_CRCLibrary.pdf
 ><br>
@@ -112,13 +109,11 @@ The flag is CTF{keyfobid}, so flag for part 1 is `CTF{200472a}`
 >**Challenge**
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;This challenge contains a recording from a Keyfob featuring a Hitag2 cipher for RKE. The keyfob transmits a message containing a plaintext keyfob ID, counter and button followed by a MAC. Attached to this challenge you will find a SDR recording of 6 presses of the unlock button.
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Use URH to decode the messages from the keyfob and figure out the keyfob ID, button and keystream. Use this to crack the (equivalent) key that's inside the keyfob. The flag is of the form CTF{key}, e.g. CTF{1d81e7e1a6fe}.
->
 ><br>**References**
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Introduction to hitag2: https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final95.pdf
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 as used in RKE, reference for message layout: https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Reference for cracking code, introduces "equivalent key": https://www.usenix.org/system/files/conference/woot18/woot18-paper-verstegen.pdf
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;Hitag2 cracking code from proxmark3 . Use crack5 for CPU cracking, or crack5opencl for OpenCL based cracking: https://github.com/RfidResearchGroup/proxmark3/tree/master/tools/hitag2crack
->
 ><br>**Hints**
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;The cracking code expects the UID and two pairs of IV and Keystream
 ><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. \<UID> \<nR1> \<aR1> \<nR2> \<aR2>
