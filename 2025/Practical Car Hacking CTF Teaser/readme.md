@@ -62,8 +62,8 @@ $python solve_checksum.py
 ><br>
 
 First, we need to setup URH. I use *Autodetect parameters* with 2 option:
-* Additionally detect noise
-* Additionally detect modulation
+* Additionally detect noise.
+* Additionally detect modulation.
 
 But when examining the sample, I see the Samples/Symbol is 159. So we need to tweak the settings.
 
@@ -144,7 +144,7 @@ I used all the data from the first packet that was successfully parsed. There ar
 * \<aR1> = 0xe93a6e74.
 
 With the hint, we can easily find the hitag2crack in proxmark3 git repo. There are crack1, 2, 3, 4 and 5. The author of first 4 is Kevin Sheldrake - he gave an excellent talk about cracking hitag2 crypto at 44CON 2017 ([should watch !!](https://youtu.be/abx1hQDCKyg?si=jOf9Ig_jUpA0jmmm)). But from the hint, I went straight to crack5.
-<br>We have \<UID> \<nR1> \<aR1>, now need another \<nR2> \<aR2>. I tried the next successful parsed packet, I compiled the crack5 and passed the param in.
+<br>We have \<UID> \<nR1> \<aR1>, now need another \<nR2> \<aR2>. Based on the log, we can see that a key was pressed 6 times, but we don't know which key was pressed, so I tried the next successful parsed packet, I compiled the crack5 and passed the param in.
 ```python
 $python hitag2_parse.py ffff0200472a03a05749e7facf
 [+] Packet bytes:
